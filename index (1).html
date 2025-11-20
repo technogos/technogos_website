@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechnoGos Engineering Services | HVAC &amp; Energy Audit Specialists</title>
+    <style>
+        :root {
+            --primary-color: #003087;
+            --secondary-color: #32b8c6;
+            --accent-orange: #e68161;
+            --dark-green: #1a5f3d;
+            --light-green: #4ade80;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0047b3 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            max-width: 250px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-main {
+            font-size: 1.5rem;
+        }
+
+        .logo-g {
+            color: var(--dark-green);
+        }
+
+        .logo-innovation {
+            color: var(--light-green);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo-impact {
+            color: var(--accent-orange);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0052b8 50%, var(--accent-orange) 100%);
+            position: relative;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(230, 129, 97, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(50, 184, 198, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .hero-feature::before {
+            content: "✓";
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #d6704e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(230, 129, 97, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card {
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Service Detail Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0047b3 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px 16px 0 0;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .detail-section {
+            margin-bottom: 2rem;
+        }
+
+        .detail-section h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .detail-section h4 {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .detail-section p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            color: var(--text-light);
+            position: relative;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .detail-list li:last-child {
+            border-bottom: none;
+        }
+
+        .detail-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+            background: rgba(50, 184, 198, 0.1);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .benefit-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .benefit-card h5 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .benefit-card p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .technical-info {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .technical-info strong {
+            color: var(--primary-color);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-top: 1rem;
+            padding-left: 0;
+        }
+
+        .service-list li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-list li::before {
+            content: "→";
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        .certifications {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .certifications h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .cert-list {
+            list-style: none;
+        }
+
+        .cert-list li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cert-list li::before {
+            content: "✓";
+            color: var(--secondary-color);
+            font-weight: bold;
+            background: rgba(50, 184, 198, 0.1);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0047b3 100%);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.875rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-submit:hover {
+            background: #2a9fac;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 6px;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-color);
+                padding: 1rem 2rem;
+                gap: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/fd32a3f6-0129-46fb-9cef-1eaac24365fa" alt="TechnoGos Engineering Services">
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Excellence in HVAC &amp; Energy Solutions</h1>
+            <p class="hero-subtitle">
+                Delivering cutting-edge engineering services with 13+ years of expertise in energy audits, 
+                HVAC systems optimization, and sustainable building performance
+            </p>
+            <div class="hero-features">
+                <div class="hero-feature">Certified Energy Auditors</div>
+                <div class="hero-feature">HVAC & Electrical Specialists</div>
+                <div class="hero-feature">Data-Driven Solutions</div>
+            </div>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get Free Consultation</a>
+                <a href="#services" class="btn btn-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive engineering solutions tailored to optimize your facility's performance and efficiency</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" onclick="openServiceDetail('energy')">
+                    <div class="service-icon">⚡</div>
+                    <h3>Energy Audit</h3>
+                    <p>Comprehensive energy audits to identify savings opportunities and improve operational efficiency across all building systems.</p>
+                    <ul class="service-list">
+                        <li>Detailed Energy Assessment</li>
+                        <li>Consumption Analysis</li>
+                        <li>ROI Calculations</li>
+                        <li>Implementation Planning</li>
+                    </ul>
+                </div>
+                <div class="service-card" onclick="openServiceDetail('hvac')">
+                    <div class="service-icon">❄️</div>
+                    <h3>HVAC Audit</h3>
+                    <p>Expert assessment and optimization of VRF/VRV systems, chillers, air handling units, and cooling systems for maximum efficiency.</p>
+                    <ul class="service-list">
+                        <li>VRF/VRV System Performance</li>
+                        <li>Chiller Optimization</li>
+                        <li>kW/TR Measurements</li>
+                        <li>System Retrofitting</li>
+                    </ul>
+                </div>
+                <div class="service-card" onclick="openServiceDetail('pump')">
+                    <div class="service-icon">🔧</div>
+                    <h3>Pump Performance Audit</h3>
+                    <p>Detailed analysis of pump systems to optimize performance, reduce energy consumption, and extend equipment life.</p>
+                    <ul class="service-list">
+                        <li>Flow Rate Analysis</li>
+                        <li>Efficiency Measurements</li>
+                        <li>VFD Optimization</li>
+                        <li>System Balancing</li>
+                    </ul>
+                </div>
+                <div class="service-card" onclick="openServiceDetail('power')">
+                    <div class="service-icon">📊</div>
+                    <h3>Power Quality &amp; Harmonics Audit</h3>
+                    <p>Comprehensive power quality assessment to identify harmonics, voltage fluctuations, and electrical system issues.</p>
+                    <ul class="service-list">
+                        <li>Harmonic Analysis</li>
+                        <li>Power Factor Studies</li>
+                        <li>Voltage Stability</li>
+                        <li>Load Balancing</li>
+                    </ul>
+                </div>
+                <div class="service-card" onclick="openServiceDetail('building')">
+                    <div class="service-icon">🏢</div>
+                    <h3>Building Audit</h3>
+                    <p>Holistic building performance evaluation to ensure optimal operations, comfort, and sustainability.</p>
+                    <ul class="service-list">
+                        <li>Thermal Comfort Analysis</li>
+                        <li>IAQ Assessment</li>
+                        <li>Energy Modeling</li>
+                        <li>Sustainability Consulting</li>
+                    </ul>
+                </div>
+                <div class="service-card" onclick="openServiceDetail('electrical')">
+                    <div class="service-icon">⚡</div>
+                    <h3>Electrical &amp; Fire Safety Audit</h3>
+                    <p>Professional electrical system assessment and fire safety compliance to ensure safe and reliable operations.</p>
+                    <ul class="service-list">
+                        <li>Electrical Safety Standards</li>
+                        <li>Fire Safety Compliance</li>
+                        <li>Emergency Systems Testing</li>
+                        <li>Risk Assessment</li>
+                    </ul>
+                </div>
+                <div class="service-card" onclick="openServiceDetail('thermography')">
+                    <div class="service-icon">🌡️</div>
+                    <h3>Detailed Thermography Inspection</h3>
+                    <p>Advanced infrared thermography to detect hot spots, insulation defects, and equipment failures before they occur.</p>
+                    <ul class="service-list">
+                        <li>Infrared Imaging</li>
+                        <li>Hot Spot Detection</li>
+                        <li>Electrical Panel Scanning</li>
+                        <li>Preventive Maintenance</li>
+                    </ul>
+                </div>
+                <div class="service-card" onclick="openServiceDetail('earthpit')">
+                    <div class="service-icon">🌍</div>
+                    <h3>Earth Pit Resistance Testing</h3>
+                    <p>Essential grounding system testing to ensure electrical safety and compliance with safety standards.</p>
+                    <ul class="service-list">
+                        <li>Resistance Measurements</li>
+                        <li>Ground Grid Testing</li>
+                        <li>Safety Compliance</li>
+                        <li>Documentation &amp; Reports</li>
+                    </ul>
+                </div>
+                <div class="service-card" onclick="openServiceDetail('rcd')">
+                    <div class="service-icon">🔌</div>
+                    <h3>Residual Current Device (RCD) Testing</h3>
+                    <p>Critical safety device testing to protect against electrical shocks and ensure life safety systems function properly.</p>
+                    <ul class="service-list">
+                        <li>Trip Time Testing</li>
+                        <li>Sensitivity Verification</li>
+                        <li>GFCI Testing</li>
+                        <li>Compliance Certification</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Choose TechnoGos?</h2>
+                    <p>
+                        TechnoGos Engineering Services combines deep technical expertise with practical field experience 
+                        to deliver measurable results. With over 13 years of hands-on experience in energy audits and HVAC 
+                        systems, we understand the unique challenges faced by modern facilities.
+                    </p>
+                    <p>
+                        Our data-driven approach ensures every recommendation is backed by thorough analysis and proven 
+                        methodologies. We don't just identify problems—we provide actionable solutions that deliver real ROI.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-card">
+                            <span class="stat-number">13+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">30%</span>
+                            <span class="stat-label">Avg. Energy Savings</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support Available</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certifications">
+                    <h3>Our Expertise</h3>
+                    <ul class="cert-list">
+                        <li>HVAC & Electrical Systems Specialist</li>
+                        <li>Building Performance Analysis</li>
+                        <li>VRF/VRV Systems Expert</li>
+                        <li>Water Management Professional</li>
+                        <li>Electrical Systems Assessment</li>
+                        <li>Data Analytics &amp; Python Programming</li>
+                        <li>Commercial &amp; Industrial Facilities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Let's Discuss Your Project</h2>
+                <p>
+                    Ready to optimize your facility's performance? Get in touch for a free consultation 
+                    and discover how we can help reduce costs and improve efficiency.
+                </p>
+                <ul class="contact-details">
+                    <li>
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            contact.technogos@gmail.com
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <strong>Phone</strong><br>
+                            +91 7588 909909
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Location</strong><br>
+                            Sky Residency, Ekta Nagari, Sinhgad Road, Pune 411 051
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon">🕐</div>
+                        <div>
+                            <strong>Business Hours</strong><br>
+                            Mon-Sat: 9:00 AM - 6:00 PM
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact-form">
+                <h3>Request a Consultation</h3>
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Required *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="hvac">HVAC Systems Analysis</option>
+                            <option value="energy">Energy Audit</option>
+                            <option value="water">Water Management</option>
+                            <option value="electrical">Electrical Systems</option>
+                            <option value="building">Building Performance</option>
+                            <option value="data">Data Analytics</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Project Details *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Inquiry</button>
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>TechnoGos Engineering</h4>
+                <p>
+                    Delivering innovative engineering solutions with a focus on energy efficiency, 
+                    sustainability, and operational excellence.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">HVAC Systems</a></li>
+                    <li><a href="#services">Energy Audits</a></li>
+                    <li><a href="#services">Water Management</a></li>
+                    <li><a href="#services">Electrical Systems</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="mailto:info@technogos.com">Email Us</a></li>
+                    <li><a href="tel:+91">Call Us</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TechnoGos Engineering Services. All rights reserved. | Innovation &amp; Impact in Engineering Excellence</p>
+        </div>
+    </footer>
+
+    <!-- Service Detail Modal -->
+    <div class="modal" id="serviceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeServiceDetail()">&times;</button>
+                <h2 id="modalTitle"></h2>
+                <p id="modalSubtitle"></p>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        const serviceDetails = {
+            energy: {
+                title: 'Energy Audit Services',
+                subtitle: 'Comprehensive energy assessment following ASHRAE standards',
+                content: `
+                    <div class="detail-section">
+                        <h3>🎯 Overview</h3>
+                        <p>Our energy audit services help identify energy-saving opportunities, reduce operational costs, and improve facility performance through systematic analysis and data-driven recommendations.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📋 ASHRAE Audit Levels</h3>
+                        
+                        <h4>Level 1 - Walk-Through Assessment</h4>
+                        <p>A preliminary analysis to identify obvious energy-saving opportunities with minimal cost and investment.</p>
+                        <ul class="detail-list">
+                            <li>Review of utility bills and energy consumption patterns</li>
+                            <li>Visual inspection of facility and equipment</li>
+                            <li>Identification of low-cost/no-cost improvements</li>
+                            <li>Preliminary energy savings estimates</li>
+                            <li>Recommendations for further investigation</li>
+                        </ul>
+
+                        <h4>Level 2 - Detailed Energy Survey & Analysis</h4>
+                        <p>Comprehensive analysis with detailed energy calculations and financial analysis of recommended improvements.</p>
+                        <ul class="detail-list">
+                            <li>Detailed breakdown of energy use by systems</li>
+                            <li>Measurement and monitoring of key parameters</li>
+                            <li>Engineering calculations for savings estimates</li>
+                            <li>Cost-benefit analysis with ROI calculations</li>
+                            <li>Prioritized list of energy conservation measures</li>
+                            <li>Implementation guidance and sequencing</li>
+                        </ul>
+
+                        <h4>Level 3 - Investment Grade Audit</h4>
+                        <p>Detailed analysis of capital-intensive modifications with guaranteed savings calculations for major investments.</p>
+                        <ul class="detail-list">
+                            <li>Detailed field measurements and sub-metering</li>
+                            <li>Comprehensive energy modeling and simulation</li>
+                            <li>Detailed financial analysis with multiple scenarios</li>
+                            <li>Risk assessment and sensitivity analysis</li>
+                            <li>Bid specifications and engineering design support</li>
+                            <li>Measurement & Verification (M&V) protocols</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>✨ Key Benefits</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h5>💰 Cost Reduction</h5>
+                                <p>Reduce energy costs by 15-40% through identified efficiency measures</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🌱 Environmental Impact</h5>
+                                <p>Lower carbon footprint and meet sustainability goals</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>📊 Data-Driven Insights</h5>
+                                <p>Comprehensive data analysis for informed decision-making</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>⚙️ System Optimization</h5>
+                                <p>Improve equipment performance and extend asset life</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>✅ Compliance</h5>
+                                <p>Meet regulatory requirements and certification standards</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>💡 Strategic Planning</h5>
+                                <p>Long-term energy management and capital planning roadmap</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔧 Technical Analysis Includes</h3>
+                        <ul class="detail-list">
+                            <li>Building envelope assessment (insulation, windows, air leakage)</li>
+                            <li>HVAC system performance and efficiency analysis</li>
+                            <li>Lighting system evaluation and upgrade opportunities</li>
+                            <li>Motor and pump system efficiency assessment</li>
+                            <li>Compressed air system optimization</li>
+                            <li>Process heating and cooling loads analysis</li>
+                            <li>Building automation and controls optimization</li>
+                            <li>Renewable energy integration feasibility</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📈 Deliverables</h3>
+                        <div class="technical-info">
+                            <p><strong>Comprehensive Report Including:</strong></p>
+                            <ul class="detail-list">
+                                <li>Executive summary with key findings</li>
+                                <li>Current energy consumption baseline</li>
+                                <li>Detailed energy conservation measures (ECMs)</li>
+                                <li>Financial analysis with payback periods</li>
+                                <li>Implementation priority matrix</li>
+                                <li>Energy savings calculations and verification methods</li>
+                                <li>Utility rebate and incentive opportunities</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            hvac: {
+                title: 'HVAC System Audit',
+                subtitle: 'VRF/VRV, Chillers, and Air Handling Systems Optimization',
+                content: `
+                    <div class="detail-section">
+                        <h3>🎯 Overview</h3>
+                        <p>Comprehensive HVAC system assessment to optimize performance, reduce energy consumption, and ensure occupant comfort through detailed analysis of cooling systems, air distribution, and controls.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔍 Assessment Scope</h3>
+                        
+                        <h4>VRF/VRV Systems Analysis</h4>
+                        <ul class="detail-list">
+                            <li>System performance monitoring and data logging</li>
+                            <li>Refrigerant piping assessment and pressure analysis</li>
+                            <li>Indoor unit placement and zoning optimization</li>
+                            <li>Control strategy evaluation and programming</li>
+                            <li>Energy efficiency ratio (EER) measurements</li>
+                            <li>Heat recovery system performance (if applicable)</li>
+                        </ul>
+
+                        <h4>Chiller Plant Optimization</h4>
+                        <ul class="detail-list">
+                            <li>kW/TR performance measurement and benchmarking</li>
+                            <li>Chiller sequencing and staging optimization</li>
+                            <li>Condenser water system efficiency analysis</li>
+                            <li>Cooling tower performance and water treatment</li>
+                            <li>Pump efficiency and variable speed drive optimization</li>
+                            <li>Free cooling opportunities assessment</li>
+                        </ul>
+
+                        <h4>Air Handling Units (AHU) Evaluation</h4>
+                        <ul class="detail-list">
+                            <li>Fan performance and motor efficiency testing</li>
+                            <li>Filter condition and pressure drop measurements</li>
+                            <li>Coil performance and heat transfer efficiency</li>
+                            <li>Air distribution and balancing verification</li>
+                            <li>Outside air economizer functionality</li>
+                            <li>VAV box control and zone temperature analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>✨ Key Benefits</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h5>⚡ Energy Savings</h5>
+                                <p>Achieve 20-35% reduction in HVAC energy consumption</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🌡️ Improved Comfort</h5>
+                                <p>Better temperature control and indoor air quality</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🔧 Extended Equipment Life</h5>
+                                <p>Reduce wear and tear through optimized operation</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>📉 Lower Maintenance</h5>
+                                <p>Reduce maintenance costs and emergency repairs</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>📊 Performance Tracking</h5>
+                                <p>Real-time monitoring and continuous optimization</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>💰 Quick ROI</h5>
+                                <p>Typical payback period of 1-3 years</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔧 Technical Measurements</h3>
+                        <div class="technical-info">
+                            <p><strong>Performance Metrics Monitored:</strong></p>
+                            <ul class="detail-list">
+                                <li>kW/TR (kilowatt per ton of refrigeration)</li>
+                                <li>Coefficient of Performance (COP)</li>
+                                <li>Energy Efficiency Ratio (EER)</li>
+                                <li>Seasonal Energy Efficiency Ratio (SEER)</li>
+                                <li>Supply and return air temperatures</li>
+                                <li>Refrigerant pressures and temperatures</li>
+                                <li>Water flow rates and differential temperatures</li>
+                                <li>Static pressures and air flow measurements</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📋 Optimization Strategies</h3>
+                        <ul class="detail-list">
+                            <li>Chilled water temperature reset controls</li>
+                            <li>Condenser water temperature optimization</li>
+                            <li>Demand-based ventilation control</li>
+                            <li>Occupancy-based scheduling</li>
+                            <li>Variable frequency drive (VFD) installation</li>
+                            <li>Free cooling and economizer integration</li>
+                            <li>System recommissioning procedures</li>
+                            <li>Predictive maintenance program development</li>
+                        </ul>
+                    </div>
+                `
+            },
+            pump: {
+                title: 'Pump Performance Audit',
+                subtitle: 'Comprehensive pump system efficiency analysis and optimization',
+                content: `
+                    <div class="detail-section">
+                        <h3>🎯 Overview</h3>
+                        <p>Detailed pump system assessment to optimize performance, reduce energy consumption, and improve reliability through systematic analysis of pumps, motors, and distribution systems.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔍 Assessment Areas</h3>
+                        <ul class="detail-list">
+                            <li>Flow rate measurements and verification</li>
+                            <li>Pump head and differential pressure analysis</li>
+                            <li>Motor electrical parameters (voltage, current, power factor)</li>
+                            <li>Pump efficiency calculations and benchmarking</li>
+                            <li>System curve analysis and operating point evaluation</li>
+                            <li>Cavitation and NPSH (Net Positive Suction Head) assessment</li>
+                            <li>Variable frequency drive (VFD) performance evaluation</li>
+                            <li>Piping system hydraulic analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>✨ Key Benefits</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h5>⚡ Energy Reduction</h5>
+                                <p>Save 25-50% on pump energy costs</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🔧 Reliability</h5>
+                                <p>Reduce failures and unplanned downtime</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>💧 Flow Optimization</h5>
+                                <p>Ensure proper flow to all zones</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🔊 Noise Reduction</h5>
+                                <p>Eliminate cavitation and vibration issues</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔧 Optimization Recommendations</h3>
+                        <ul class="detail-list">
+                            <li>Right-sizing of pumps for actual demand</li>
+                            <li>VFD installation for variable load applications</li>
+                            <li>Impeller trimming for oversized pumps</li>
+                            <li>System balancing and control valve optimization</li>
+                            <li>Multiple pump staging strategies</li>
+                            <li>Premium efficiency motor upgrades</li>
+                        </ul>
+                    </div>
+                `
+            },
+            power: {
+                title: 'Power Quality & Harmonics Audit',
+                subtitle: 'Electrical system analysis for reliability and efficiency',
+                content: `
+                    <div class="detail-section">
+                        <h3>🎯 Overview</h3>
+                        <p>Comprehensive power quality assessment to identify harmonics, voltage issues, and electrical system inefficiencies that affect equipment performance and energy costs.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔍 Analysis Parameters</h3>
+                        <ul class="detail-list">
+                            <li>Total Harmonic Distortion (THD) measurements</li>
+                            <li>Voltage sags, swells, and transients monitoring</li>
+                            <li>Power factor analysis and correction opportunities</li>
+                            <li>Load balancing across phases</li>
+                            <li>Neutral current and ground current assessment</li>
+                            <li>Flicker and voltage fluctuation analysis</li>
+                            <li>Capacitor bank performance evaluation</li>
+                            <li>Transformer loading and losses calculation</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>✨ Key Benefits</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h5>🛡️ Equipment Protection</h5>
+                                <p>Prevent premature equipment failure</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>💰 Demand Reduction</h5>
+                                <p>Lower utility demand charges</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>⚡ Power Factor</h5>
+                                <p>Improve power factor and reduce penalties</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🔌 System Capacity</h5>
+                                <p>Free up electrical capacity for expansion</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔧 Solutions Provided</h3>
+                        <ul class="detail-list">
+                            <li>Harmonic filtering recommendations</li>
+                            <li>Power factor correction sizing and placement</li>
+                            <li>Load balancing strategies</li>
+                            <li>Voltage regulation solutions</li>
+                            <li>Surge protection device selection</li>
+                            <li>Grounding and bonding improvements</li>
+                        </ul>
+                    </div>
+                `
+            },
+            building: {
+                title: 'Building Performance Audit',
+                subtitle: 'Holistic facility assessment for comfort and efficiency',
+                content: `
+                    <div class="detail-section">
+                        <h3>🎯 Overview</h3>
+                        <p>Comprehensive building performance evaluation covering energy systems, indoor environmental quality, and operational efficiency to create healthy, sustainable facilities.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔍 Assessment Components</h3>
+                        <ul class="detail-list">
+                            <li>Building envelope thermal performance testing</li>
+                            <li>Indoor air quality (IAQ) measurements</li>
+                            <li>Thermal comfort analysis (temperature, humidity, air movement)</li>
+                            <li>Lighting levels and quality assessment</li>
+                            <li>Acoustics and noise level evaluation</li>
+                            <li>Water usage and efficiency analysis</li>
+                            <li>Building automation system (BAS) review</li>
+                            <li>Occupant satisfaction surveys</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>✨ Key Benefits</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h5>😊 Occupant Satisfaction</h5>
+                                <p>Improve comfort and productivity</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🏥 Health & Wellness</h5>
+                                <p>Better indoor air quality and lighting</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🌱 Sustainability</h5>
+                                <p>Meet green building certifications</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>📊 Operational Efficiency</h5>
+                                <p>Optimize all building systems</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            electrical: {
+                title: 'Electrical & Fire Safety Audit',
+                subtitle: 'Comprehensive safety compliance and risk assessment',
+                content: `
+                    <div class="detail-section">
+                        <h3>🎯 Overview</h3>
+                        <p>Professional electrical and fire safety assessment to ensure compliance with safety standards, protect personnel, and prevent equipment damage or fire hazards.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔍 Electrical Safety Assessment</h3>
+                        <ul class="detail-list">
+                            <li>Compliance with National Electrical Code (NEC/IEC standards)</li>
+                            <li>Panel board and switchgear inspection</li>
+                            <li>Overcurrent protection device verification</li>
+                            <li>Arc flash hazard analysis and labeling</li>
+                            <li>Grounding and bonding system integrity</li>
+                            <li>Emergency power system testing</li>
+                            <li>Electrical clearance and working space verification</li>
+                            <li>Conductor sizing and protection verification</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔥 Fire Safety Assessment</h3>
+                        <ul class="detail-list">
+                            <li>Fire alarm system functionality testing</li>
+                            <li>Emergency lighting and exit signage inspection</li>
+                            <li>Fire suppression system verification</li>
+                            <li>Fire door and compartmentation review</li>
+                            <li>Electrical fire hazard identification</li>
+                            <li>Hot work and fire prevention procedures</li>
+                            <li>Emergency evacuation plan review</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>✨ Key Benefits</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h5>👷 Personnel Safety</h5>
+                                <p>Protect workers from electrical hazards</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>✅ Compliance</h5>
+                                <p>Meet regulatory requirements</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🛡️ Risk Mitigation</h5>
+                                <p>Reduce fire and accident liability</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>💼 Insurance</h5>
+                                <p>Lower insurance premiums</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            thermography: {
+                title: 'Detailed Thermography Inspection',
+                subtitle: 'Infrared imaging for predictive maintenance',
+                content: `
+                    <div class="detail-section">
+                        <h3>🎯 Overview</h3>
+                        <p>Advanced infrared thermography inspection to detect equipment problems before failure, identify energy losses, and prevent costly downtime.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔍 Inspection Areas</h3>
+                        <ul class="detail-list">
+                            <li>Electrical panels and switchgear scanning</li>
+                            <li>Motor and bearing temperature analysis</li>
+                            <li>Transformer hot spot detection</li>
+                            <li>Building envelope thermal imaging</li>
+                            <li>HVAC ductwork and insulation defects</li>
+                            <li>Steam and hot water system leaks</li>
+                            <li>Roof moisture intrusion detection</li>
+                            <li>Process equipment thermal monitoring</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>✨ Key Benefits</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h5>⏰ Early Detection</h5>
+                                <p>Find problems before equipment fails</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>💰 Cost Savings</h5>
+                                <p>Prevent expensive emergency repairs</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🔒 Safety</h5>
+                                <p>Identify fire hazards and hot spots</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>⚡ Energy Efficiency</h5>
+                                <p>Locate heat losses and air leaks</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📋 Deliverables</h3>
+                        <div class="technical-info">
+                            <p><strong>Comprehensive Report Including:</strong></p>
+                            <ul class="detail-list">
+                                <li>Thermal images with temperature scales</li>
+                                <li>Problem severity classification (critical/moderate/minor)</li>
+                                <li>Recommended corrective actions</li>
+                                <li>Priority ranking for repairs</li>
+                                <li>Trend analysis (for repeat inspections)</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            earthpit: {
+                title: 'Earth Pit Resistance Testing',
+                subtitle: 'Grounding system verification for electrical safety',
+                content: `
+                    <div class="detail-section">
+                        <h3>🎯 Overview</h3>
+                        <p>Professional earth pit resistance testing to ensure proper grounding, protect personnel from electric shock, and maintain equipment safety.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔍 Testing Methodology</h3>
+                        <ul class="detail-list">
+                            <li>Three-point fall-of-potential method</li>
+                            <li>Four-point Wenner method for large grids</li>
+                            <li>Clamp-on ground resistance testing</li>
+                            <li>Soil resistivity measurements</li>
+                            <li>Ground grid continuity verification</li>
+                            <li>Step and touch potential analysis</li>
+                            <li>Seasonal variation assessment</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>✨ Key Benefits</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h5>⚡ Personnel Safety</h5>
+                                <p>Protect against electric shock hazards</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🛡️ Equipment Protection</h5>
+                                <p>Prevent damage from ground faults</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>✅ Compliance</h5>
+                                <p>Meet electrical safety standards</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>📊 Documentation</h5>
+                                <p>Required for audits and inspections</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔧 Testing Standards</h3>
+                        <div class="technical-info">
+                            <p><strong>Compliance with:</strong></p>
+                            <ul class="detail-list">
+                                <li>IEEE 80 - Guide for Safety in AC Substation Grounding</li>
+                                <li>IEEE 81 - Guide for Measuring Earth Resistivity</li>
+                                <li>IS 3043 - Code of Practice for Earthing</li>
+                                <li>IEC 62305 - Lightning Protection Standards</li>
+                                <li>National Electrical Code (NEC) requirements</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            rcd: {
+                title: 'Residual Current Device (RCD) Testing',
+                subtitle: 'Life safety device verification and compliance',
+                content: `
+                    <div class="detail-section">
+                        <h3>🎯 Overview</h3>
+                        <p>Critical testing of residual current devices (RCDs/GFCIs) to ensure proper operation and protect against electric shock and electrocution hazards.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔍 Testing Parameters</h3>
+                        <ul class="detail-list">
+                            <li>Trip current sensitivity verification (30mA, 100mA, 300mA)</li>
+                            <li>Trip time measurements at rated current</li>
+                            <li>Trip time at 5x rated current (instantaneous)</li>
+                            <li>Non-trip current testing (50% of rated)</li>
+                            <li>Manual test button functionality</li>
+                            <li>Contact resistance measurements</li>
+                            <li>Ramp test for actual trip threshold</li>
+                            <li>Nuisance tripping investigation</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>✨ Key Benefits</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h5>👤 Life Safety</h5>
+                                <p>Prevent fatal electric shock accidents</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🔥 Fire Prevention</h5>
+                                <p>Detect ground faults before fires start</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>✅ Regulatory Compliance</h5>
+                                <p>Meet OSHA and electrical code requirements</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>📋 Certification</h5>
+                                <p>Documentation for insurance and audits</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📅 Testing Frequency</h3>
+                        <div class="technical-info">
+                            <p><strong>Recommended Schedule:</strong></p>
+                            <ul class="detail-list">
+                                <li>Monthly manual button test by user</li>
+                                <li>Annual comprehensive testing by qualified technician</li>
+                                <li>After any electrical fault or incident</li>
+                                <li>Before placing equipment back in service</li>
+                                <li>As required by local electrical regulations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔧 Applications Covered</h3>
+                        <ul class="detail-list">
+                            <li>RCCBs (Residual Current Circuit Breakers)</li>
+                            <li>RCBOs (Combined RCD and MCB)</li>
+                            <li>GFCIs (Ground Fault Circuit Interrupters)</li>
+                            <li>Portable RCD adapters</li>
+                            <li>Socket outlet RCDs</li>
+                            <li>Industrial equipment RCD protection</li>
+                        </ul>
+                    </div>
+                `
+            }
+        };
+
+        function openServiceDetail(serviceKey) {
+            const modal = document.getElementById('serviceModal');
+            const service = serviceDetails[serviceKey];
+            
+            if (service) {
+                document.getElementById('modalTitle').textContent = service.title;
+                document.getElementById('modalSubtitle').textContent = service.subtitle;
+                document.getElementById('modalBody').innerHTML = service.content;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeServiceDetail() {
+            const modal = document.getElementById('serviceModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('serviceModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeServiceDetail();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeServiceDetail();
+            }
+        });
+
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formMessage = document.getElementById('formMessage');
+            const form = document.getElementById('contactForm');
+            
+            // Get form data
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // Simulate form submission
+            formMessage.textContent = 'Thank you for your inquiry! We will contact you within 24 hours.';
+            formMessage.className = 'form-message success';
+            
+            // Reset form
+            form.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+                formMessage.className = 'form-message';
+            }, 5000);
+            
+            // In production, you would send this data to a server
+            console.log('Form submitted with data:', data);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    const navMenu = document.getElementById('navMenu');
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Add active state to navigation on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
