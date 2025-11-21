@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechnoGos Engineering Services | HVAC &amp; Energy Audit Specialists</title>
+    <title>TechnoGos Engineering Services | HVAC & Energy Audit Specialists</title>
     <style>
         :root {
             --primary-color: #003087;
             --secondary-color: #32b8c6;
-            --accent-orange: #e68161;
-            --dark-green: #1a5f3d;
-            --light-green: #4ade80;
+            --accent-orange: #ff6b35;
+            --dark-green: #0d7a5f;
+            --light-green: #10b981;
             --text-dark: #1f2937;
             --text-light: #6b7280;
-            --bg-light: #f9fafb;
+            --bg-light: #f0f9ff;
             --bg-white: #ffffff;
+            --service-bg-1: linear-gradient(135deg, #003087 0%, #0052b8 100%);
+            --service-bg-2: linear-gradient(135deg, #0d7a5f 0%, #10b981 100%);
+            --service-bg-3: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+            --service-bg-4: linear-gradient(135deg, #32b8c6 0%, #4dd4e0 100%);
         }
 
         * {
@@ -32,13 +36,14 @@
 
         /* Header & Navigation */
         .header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #0047b3 100%);
-            color: white;
+            background: white;
+            color: var(--primary-color);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid var(--primary-color);
         }
 
         .nav-container {
@@ -100,7 +105,7 @@
         }
 
         .nav-menu a {
-            color: white;
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
@@ -114,14 +119,14 @@
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--primary-color);
             font-size: 1.5rem;
             cursor: pointer;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #0052b8 50%, var(--accent-orange) 100%);
+            background: linear-gradient(135deg, #002366 0%, var(--primary-color) 40%, #0052b8 70%, var(--accent-orange) 100%);
             position: relative;
             color: white;
             padding: 6rem 2rem;
@@ -137,9 +142,22 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(230, 129, 97, 0.2) 0%, transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(50, 184, 198, 0.15) 0%, transparent 50%);
+                radial-gradient(circle at 15% 25%, rgba(50, 184, 198, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(255, 107, 53, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+                linear-gradient(120deg, transparent 48%, rgba(255, 255, 255, 0.03) 48%, rgba(255, 255, 255, 0.03) 52%, transparent 52%);
+            background-size: 400px 400px, 350px 350px, 500px 500px, 80px 80px;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color) 0%, var(--light-green) 50%, var(--accent-orange) 100%);
             pointer-events: none;
         }
 
@@ -271,15 +289,63 @@
             border-radius: 12px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid transparent;
         }
 
-        .service-card {
-            cursor: pointer;
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent 0%, currentColor 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .service-card:nth-child(4n+1) {
+            border-bottom-color: var(--primary-color);
+        }
+
+        .service-card:nth-child(4n+2) {
+            border-bottom-color: var(--dark-green);
+        }
+
+        .service-card:nth-child(4n+3) {
+            border-bottom-color: var(--accent-orange);
+        }
+
+        .service-card:nth-child(4n+4) {
+            border-bottom-color: var(--secondary-color);
+        }
+
+        .service-card:nth-child(4n+1)::before {
+            color: var(--primary-color);
+        }
+
+        .service-card:nth-child(4n+2)::before {
+            color: var(--dark-green);
+        }
+
+        .service-card:nth-child(4n+3)::before {
+            color: var(--accent-orange);
+        }
+
+        .service-card:nth-child(4n+4)::before {
+            color: var(--secondary-color);
         }
 
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
         }
 
         /* Service Detail Modal */
@@ -468,6 +534,22 @@
             justify-content: center;
             margin-bottom: 1.5rem;
             font-size: 1.75rem;
+        }
+
+        .service-card:nth-child(4n+1) .service-icon {
+            background: var(--service-bg-1);
+        }
+
+        .service-card:nth-child(4n+2) .service-icon {
+            background: var(--service-bg-2);
+        }
+
+        .service-card:nth-child(4n+3) .service-icon {
+            background: var(--service-bg-3);
+        }
+
+        .service-card:nth-child(4n+4) .service-icon {
+            background: var(--service-bg-4);
         }
 
         .service-card h3 {
@@ -782,8 +864,9 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: var(--primary-color);
+                background: white;
                 padding: 1rem 2rem;
+                border-top: 2px solid var(--primary-color);
                 gap: 1rem;
             }
 
@@ -967,6 +1050,61 @@
                         <li>Compliance Certification</li>
                     </ul>
                 </div>
+                <div class="service-card" onclick="openServiceDetail('hvacdesign')">
+                    <div class="service-icon">📐</div>
+                    <h3>HVAC Design Consultation</h3>
+                    <p>Expert HVAC system design services including heat load calculations, equipment selection, and system optimization for new and retrofit projects.</p>
+                    <ul class="service-list">
+                        <li>Heat Load Calculations</li>
+                        <li>Equipment Sizing & Selection</li>
+                        <li>System Design & Layout</li>
+                        <li>Energy Modeling</li>
+                    </ul>
+                </div>
+                <div class="service-card" onclick="openServiceDetail('wateraudit')">
+                    <div class="service-icon">💧</div>
+                    <h3>Water Audit Services</h3>
+                    <p>Comprehensive water usage analysis to identify conservation opportunities, reduce costs, and ensure sustainable water management practices.</p>
+                    <ul class="service-list">
+                        <li>Water Consumption Analysis</li>
+                        <li>Leak Detection</li>
+                        <li>Fixture Efficiency Assessment</li>
+                        <li>Water Conservation Measures</li>
+                    </ul>
+                </div>
+                <div class="service-card" onclick="openServiceDetail('powerstudy')">
+                    <div class="service-icon">⚡</div>
+                    <h3>Power System Studies</h3>
+                    <p>Detailed power system analysis including load flow, short circuit, arc flash, and protection coordination studies for safe and reliable operations.</p>
+                    <ul class="service-list">
+                        <li>Load Flow Analysis</li>
+                        <li>Short Circuit Studies</li>
+                        <li>Arc Flash Analysis</li>
+                        <li>Protection Coordination</li>
+                    </ul>
+                </div>
+                <div class="service-card" onclick="openServiceDetail('testing')">
+                    <div class="service-icon">🔬</div>
+                    <h3>Testing & Commissioning</h3>
+                    <p>Comprehensive electrical and mechanical testing services to ensure systems meet specifications and operate safely and efficiently.</p>
+                    <ul class="service-list">
+                        <li>Electrical Testing (Relay, CT/PT)</li>
+                        <li>Transformer Testing (DGA, Winding Resistance)</li>
+                        <li>Circuit Breaker Testing</li>
+                        <li>HVAC Commissioning</li>
+                    </ul>
+                </div>
+                <div class="service-card" onclick="openServiceDetail('solar')">
+                    <div class="service-icon">☀️</div>
+                    <h3>Solar Energy Solutions</h3>
+                    <p>Complete solar PV system design, performance analysis, and inverter efficiency testing for optimal renewable energy integration.</p>
+                    <ul class="service-list">
+                        <li>Solar PV System Design</li>
+                        <li>Inverter Efficiency Testing</li>
+                        <li>Energy Yield Analysis</li>
+                        <li>Performance Monitoring</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -1009,12 +1147,13 @@
                     <h3>Our Expertise</h3>
                     <ul class="cert-list">
                         <li>HVAC & Electrical Systems Specialist</li>
+                        <li>ASHRAE Level 1, 2 & 3 Energy Audits</li>
                         <li>Building Performance Analysis</li>
-                        <li>VRF/VRV Systems Expert</li>
-                        <li>Water Management Professional</li>
-                        <li>Electrical Systems Assessment</li>
-                        <li>Data Analytics &amp; Python Programming</li>
-                        <li>Commercial &amp; Industrial Facilities</li>
+                        <li>HVAC Design & Heat Load Calculation</li>
+                        <li>Water Management & Audit Professional</li>
+                        <li>Electrical Testing & Commissioning</li>
+                        <li>Thermography & Safety Testing Expert</li>
+                        <li>Commercial & Industrial Facilities</li>
                     </ul>
                 </div>
             </div>
@@ -1131,10 +1270,10 @@
             <div class="footer-section">
                 <h4>Connect</h4>
                 <ul>
-                    <li><a href="mailto:info@technogos.com">Email Us</a></li>
-                    <li><a href="tel:+91">Call Us</a></li>
+                    <li><a href="mailto:contact.technogos@gmail.com">Email Us</a></li>
+                    <li><a href="tel:+917588909909">Call Us</a></li>
                     <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="https://wa.me/917588909909" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
                 </ul>
             </div>
         </div>
@@ -1447,6 +1586,14 @@
                             <li>Capacitor bank performance evaluation</li>
                             <li>Transformer loading and losses calculation</li>
                         </ul>
+                        <div class="technical-info">
+                            <p><strong>Standards Compliance:</strong></p>
+                            <ul class="detail-list">
+                                <li>EN 50160 - Voltage Characteristics of Electricity Supply</li>
+                                <li>IEEE 519 - Harmonic Control in Electrical Power Systems</li>
+                                <li>IEC 61000 - Electromagnetic Compatibility Standards</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <div class="detail-section">
@@ -1777,6 +1924,392 @@
                             <li>Socket outlet RCDs</li>
                             <li>Industrial equipment RCD protection</li>
                         </ul>
+                    </div>
+                `
+            },
+            hvacdesign: {
+                title: 'HVAC Design Consultation',
+                subtitle: 'Professional HVAC system design and engineering services',
+                content: `
+                    <div class="detail-section">
+                        <h3>🎯 Overview</h3>
+                        <p>Expert HVAC design services for new construction and retrofit projects, ensuring optimal comfort, efficiency, and compliance with building codes and standards.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔍 Design Services</h3>
+                        <ul class="detail-list">
+                            <li>Heat load calculations per ASHRAE standards</li>
+                            <li>Cooling load analysis using industry-standard software</li>
+                            <li>Equipment sizing and selection (chillers, AHUs, FCUs)</li>
+                            <li>Duct and piping system design</li>
+                            <li>Ventilation requirements per codes</li>
+                            <li>Energy modeling and simulation</li>
+                            <li>System layout and equipment placement</li>
+                            <li>Control strategy development</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>✨ Key Benefits</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h5>📐 Accurate Sizing</h5>
+                                <p>Properly sized systems for optimal performance</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>💰 Cost Optimization</h5>
+                                <p>Reduce capital and operational costs</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>⚡ Energy Efficiency</h5>
+                                <p>Maximize system efficiency and reduce consumption</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>✅ Code Compliance</h5>
+                                <p>Meet all local and international standards</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📋 Standards & Methods</h3>
+                        <div class="technical-info">
+                            <p><strong>Design Standards:</strong></p>
+                            <ul class="detail-list">
+                                <li>ASHRAE Handbook - Fundamentals</li>
+                                <li>ASHRAE 90.1 - Energy Standard for Buildings</li>
+                                <li>NBC (National Building Code) requirements</li>
+                                <li>IS 1391 - Selection and Installation of Split AC</li>
+                                <li>Carrier HAP, Trane TRACE software modeling</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            wateraudit: {
+                title: 'Water Audit Services',
+                subtitle: 'Comprehensive water conservation and efficiency analysis',
+                content: `
+                    <div class="detail-section">
+                        <h3>🎯 Overview</h3>
+                        <p>Detailed water usage assessment to identify conservation opportunities, reduce costs, and promote sustainable water management practices.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔍 Assessment Areas</h3>
+                        <ul class="detail-list">
+                            <li>Water consumption analysis and baseline establishment</li>
+                            <li>Distribution system leak detection and quantification</li>
+                            <li>Fixture and equipment efficiency evaluation</li>
+                            <li>Cooling tower water usage optimization</li>
+                            <li>Irrigation system efficiency assessment</li>
+                            <li>Process water usage analysis</li>
+                            <li>Wastewater generation and recycling opportunities</li>
+                            <li>Rainwater harvesting feasibility</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>✨ Key Benefits</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h5>💰 Cost Savings</h5>
+                                <p>Reduce water and wastewater costs by 20-40%</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>💧 Conservation</h5>
+                                <p>Sustainable water resource management</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🌱 Environmental Impact</h5>
+                                <p>Reduce environmental footprint</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>✅ Compliance</h5>
+                                <p>Meet water conservation regulations</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔧 Conservation Measures</h3>
+                        <ul class="detail-list">
+                            <li>Low-flow fixture retrofits</li>
+                            <li>Leak repair prioritization and ROI analysis</li>
+                            <li>Cooling tower water treatment optimization</li>
+                            <li>Rainwater harvesting system design</li>
+                            <li>Wastewater recycling for non-potable uses</li>
+                            <li>Smart irrigation controllers and sensors</li>
+                        </ul>
+                    </div>
+                `
+            },
+            powerstudy: {
+                title: 'Power System Studies',
+                subtitle: 'Comprehensive electrical system analysis and protection coordination',
+                content: `
+                    <div class="detail-section">
+                        <h3>🎯 Overview</h3>
+                        <p>Detailed power system analysis to ensure safe, reliable, and efficient electrical distribution through computer-aided studies and simulations.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔍 Study Types</h3>
+                        
+                        <h4>Load Flow Studies</h4>
+                        <ul class="detail-list">
+                            <li>Voltage profile analysis under various load conditions</li>
+                            <li>Power flow through feeders and transformers</li>
+                            <li>System losses calculation</li>
+                            <li>Capacity planning and expansion studies</li>
+                        </ul>
+
+                        <h4>Short Circuit Analysis</h4>
+                        <ul class="detail-list">
+                            <li>Maximum and minimum fault current calculations</li>
+                            <li>Equipment duty verification (breakers, busbars)</li>
+                            <li>Fault contribution from all sources</li>
+                            <li>Equipment rating validation</li>
+                        </ul>
+
+                        <h4>Arc Flash Study</h4>
+                        <ul class="detail-list">
+                            <li>Incident energy calculations per IEEE 1584</li>
+                            <li>Arc flash boundary determination</li>
+                            <li>PPE category assignment</li>
+                            <li>Warning label generation</li>
+                        </ul>
+
+                        <h4>Protection Coordination</h4>
+                        <ul class="detail-list">
+                            <li>Relay settings calculation and optimization</li>
+                            <li>Time-current coordination curves</li>
+                            <li>Fuse-breaker coordination</li>
+                            <li>Selective coordination analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>✨ Key Benefits</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h5>🛡️ Safety</h5>
+                                <p>Protect personnel from electrical hazards</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>⚡ Reliability</h5>
+                                <p>Minimize downtime and improve uptime</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>✅ Compliance</h5>
+                                <p>Meet NEC, IEEE, and NFPA standards</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>💰 Equipment Protection</h5>
+                                <p>Prevent damage from faults</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📋 Standards Compliance</h3>
+                        <div class="technical-info">
+                            <p><strong>Industry Standards:</strong></p>
+                            <ul class="detail-list">
+                                <li>IEEE 1584 - Arc Flash Hazard Calculation</li>
+                                <li>NFPA 70E - Electrical Safety in the Workplace</li>
+                                <li>IEEE 242 (Buff Book) - Protection and Coordination</li>
+                                <li>IEC 60909 - Short Circuit Calculations</li>
+                                <li>NEC Article 110.16 - Arc Flash Warning Labels</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            testing: {
+                title: 'Testing & Commissioning Services',
+                subtitle: 'Comprehensive electrical and mechanical testing',
+                content: `
+                    <div class="detail-section">
+                        <h3>🎯 Overview</h3>
+                        <p>Professional testing and commissioning services to verify equipment performance, ensure safe operation, and validate system functionality before handover.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔍 Electrical Testing Services</h3>
+                        
+                        <h4>Protection Relay Testing</h4>
+                        <ul class="detail-list">
+                            <li>Overcurrent, differential, and distance relay testing</li>
+                            <li>Relay characteristic verification</li>
+                            <li>Timing and coordination verification</li>
+                            <li>Settings validation per coordination study</li>
+                        </ul>
+
+                        <h4>Transformer Testing</h4>
+                        <ul class="detail-list">
+                            <li>Turns ratio testing (TTR)</li>
+                            <li>Winding resistance measurement</li>
+                            <li>Insulation resistance (Megger test)</li>
+                            <li>Dissolved Gas Analysis (DGA)</li>
+                            <li>Oil dielectric strength testing</li>
+                        </ul>
+
+                        <h4>Circuit Breaker Testing</h4>
+                        <ul class="detail-list">
+                            <li>Contact resistance measurement</li>
+                            <li>Insulation resistance testing</li>
+                            <li>Timing analysis (open/close operations)</li>
+                            <li>Trip coil testing</li>
+                            <li>Mechanical operation verification</li>
+                        </ul>
+
+                        <h4>Residual Current Device (RCD) Testing</h4>
+                        <ul class="detail-list">
+                            <li>Trip current sensitivity verification (30mA, 100mA, 300mA)</li>
+                            <li>Trip time measurements at rated and 5x rated current</li>
+                            <li>Contact resistance and ramp testing</li>
+                            <li>Manual test button functionality check</li>
+                        </ul>
+
+                        <h4>Current & Potential Transformer Testing</h4>
+                        <ul class="detail-list">
+                            <li>Turns ratio and polarity verification</li>
+                            <li>Burden and excitation tests</li>
+                            <li>Insulation resistance testing</li>
+                            <li>Accuracy class verification</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>❄️ HVAC Commissioning</h3>
+                        <ul class="detail-list">
+                            <li>System startup and checkout procedures</li>
+                            <li>Air and water balancing verification</li>
+                            <li>Control sequences testing and validation</li>
+                            <li>Performance testing per design specifications</li>
+                            <li>Training and documentation handover</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>✨ Key Benefits</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h5>✅ Quality Assurance</h5>
+                                <p>Verify equipment meets specifications</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🛡️ Safety Validation</h5>
+                                <p>Ensure safe operation before energization</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>📋 Documentation</h5>
+                                <p>Complete test reports and certificates</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>⚡ Reliability</h5>
+                                <p>Prevent failures and downtime</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📋 Testing Standards</h3>
+                        <div class="technical-info">
+                            <p><strong>Compliance Standards:</strong></p>
+                            <ul class="detail-list">
+                                <li>IEEE C57.12.90 - Transformer Testing</li>
+                                <li>IEEE C37.09 - Circuit Breaker Testing</li>
+                                <li>IEC 60255 - Protection Relay Standards</li>
+                                <li>ASHRAE Guideline 1.1 - HVAC Commissioning</li>
+                                <li>NETA Standards - Electrical Testing</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            solar: {
+                title: 'Solar Energy Solutions',
+                subtitle: 'Complete solar PV design, testing, and performance optimization',
+                content: `
+                    <div class="detail-section">
+                        <h3>🎯 Overview</h3>
+                        <p>Comprehensive solar photovoltaic system design, performance analysis, and optimization services to maximize renewable energy generation and ROI.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🔍 Design Services</h3>
+                        <ul class="detail-list">
+                            <li>Solar radiation and shading analysis</li>
+                            <li>PV array sizing and configuration</li>
+                            <li>Inverter selection and string design</li>
+                            <li>Mounting structure design and wind load calculations</li>
+                            <li>Electrical single line diagram preparation</li>
+                            <li>Grid integration and net metering design</li>
+                            <li>Energy yield estimation and financial modeling</li>
+                            <li>System monitoring and SCADA design</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>⚡ Performance Testing & Optimization</h3>
+                        
+                        <h4>Inverter Efficiency Testing</h4>
+                        <ul class="detail-list">
+                            <li>European efficiency calculation</li>
+                            <li>CEC weighted efficiency measurement</li>
+                            <li>Maximum power point tracking (MPPT) verification</li>
+                            <li>Power quality and harmonic analysis</li>
+                            <li>Temperature derating assessment</li>
+                        </ul>
+
+                        <h4>PV Module Testing</h4>
+                        <ul class="detail-list">
+                            <li>I-V curve tracing and analysis</li>
+                            <li>Performance ratio calculation</li>
+                            <li>Temperature coefficient verification</li>
+                            <li>Hot spot detection via thermography</li>
+                            <li>Degradation assessment</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>✨ Key Benefits</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h5>☀️ Optimized Generation</h5>
+                                <p>Maximize solar energy production</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>💰 ROI Improvement</h5>
+                                <p>Faster payback through optimal design</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>🔧 Performance Assurance</h5>
+                                <p>Verify system meets design specifications</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h5>📊 Monitoring</h5>
+                                <p>Real-time performance tracking</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📋 Standards & Software</h3>
+                        <div class="technical-info">
+                            <p><strong>Design Tools & Standards:</strong></p>
+                            <ul class="detail-list">
+                                <li>PVsyst, Helioscope for system design</li>
+                                <li>IEC 61215 - PV Module Testing Standards</li>
+                                <li>IEC 62446 - Grid Connected PV Systems</li>
+                                <li>IEEE 1547 - Interconnection Standards</li>
+                                <li>IS 16221 - Installation and Commissioning</li>
+                                <li>MNRE guidelines and subsidy compliance</li>
+                            </ul>
+                        </div>
                     </div>
                 `
             }
