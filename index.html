@@ -251,7 +251,7 @@
         /* Services Section */
         .services {
             padding: 5rem 2rem;
-            background: #1a202c;
+            background: #f0f9ff;
         }
 
         .container {
@@ -266,13 +266,13 @@
 
         .section-header h2 {
             font-size: 2.5rem;
-            color: white;
+            color: var(--primary-color);
             margin-bottom: 1rem;
         }
 
         .section-header p {
             font-size: 1.125rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-light);
             max-width: 700px;
             margin: 0 auto;
         }
@@ -292,6 +292,8 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
             border-bottom: 3px solid transparent;
         }
 
@@ -308,18 +310,26 @@
         }
 
         .service-card:nth-child(4n+1) {
+            border-left-color: var(--primary-color);
+            border-right-color: var(--primary-color);
             border-bottom-color: var(--primary-color);
         }
 
         .service-card:nth-child(4n+2) {
+            border-left-color: var(--dark-green);
+            border-right-color: var(--dark-green);
             border-bottom-color: var(--dark-green);
         }
 
         .service-card:nth-child(4n+3) {
+            border-left-color: var(--accent-orange);
+            border-right-color: var(--accent-orange);
             border-bottom-color: var(--accent-orange);
         }
 
         .service-card:nth-child(4n+4) {
+            border-left-color: var(--secondary-color);
+            border-right-color: var(--secondary-color);
             border-bottom-color: var(--secondary-color);
         }
 
@@ -1155,22 +1165,35 @@
                         <li>Performance Monitoring</li>
                     </ul>
                 </div>
-            
-            <div class="service-card" onclick="openServiceDetail('instruments')" style="cursor: pointer;">
-                <div class="service-icon">🔬</div>
-                <h3>Professional Testing Instruments</h3>
-                <p>State-of-the-art equipment for accurate measurements and comprehensive analysis during audits and testing.</p>
-                <ul class="service-list">
-                    <li>Power Quality Analyzers</li>
-                    <li>Thermal Imaging Cameras</li>
-                    <li>Flow Meters & Data Loggers</li>
-                    <li>Earth & RCD Testers</li>
-                </ul>
-                <div class="service-bottom-strip" style="background: var(--service-bg-1);"></div>
             </div>
         </div>
+    </section>
+
+    <!-- Professional Instruments Section -->
+    <section class="professional-instruments" style="padding: 3rem 2rem; background: #1e3a5f;">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <h2 style="color: white;">Professional Testing Instruments</h2>
+                <p style="color: rgba(255,255,255,0.9);">State-of-the-art equipment for accurate measurements and comprehensive analysis</p>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <div class="service-card" onclick="openServiceDetail('instruments')" style="max-width: 500px; cursor: pointer;">
+                    <div class="service-icon">🔬</div>
+                    <h3>View Our Testing Equipment</h3>
+                    <p>Click to explore our comprehensive range of 12 professional testing instruments used in energy audits, HVAC assessments, and electrical testing.</p>
+                    <ul class="service-list">
+                        <li>Power Quality Analyzers</li>
+                        <li>Thermal Imaging Cameras</li>
+                        <li>Flow Meters & Data Loggers</li>
+                        <li>Testing & Safety Equipment</li>
+                    </ul>
+                    <div class="service-bottom-strip" style="background: var(--service-bg-2);"></div>
+                </div>
+            </div>
         </div>
     </section>
+
+
 
     <!-- Instruments Section -->
     
@@ -1218,6 +1241,7 @@
                         <li>HVAC Design & Heat Load Calculation</li>
                         <li>Water Management & Audit Professional</li>
                         <li>Electrical Testing & Commissioning</li>
+                    <li>Lightning Protection System Design & Testing</li>
                         <li>Thermography & Safety Testing Expert</li>
                         <li>Commercial & Industrial Facilities</li>
                     </ul>
@@ -1338,7 +1362,7 @@
                 <ul>
                     <li><a href="mailto:contact.technogos@gmail.com">Email Us</a></li>
                     <li><a href="tel:+917588909909">Call Us</a></li>
-                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="https://www.linkedin.com/company/110300193" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
                     <li><a href="https://wa.me/917588909909" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
                 </ul>
             </div>
@@ -2353,12 +2377,118 @@
                     </div>
                 `
             }
-        },
+        ,
             instruments: {
                 title: 'Professional Testing Instruments',
-                subtitle: 'State-of-the-art equipment for accurate measurements',
-                content: document.getElementById('instrumentsModal').querySelector('.modal-body').innerHTML
-            };
+                subtitle: 'State-of-the-art equipment for accurate measurements and analysis',
+                content: `
+                    <div class="detail-section">
+                        <h3>🔧 Testing & Measurement Equipment</h3>
+                        <p>We use industry-leading instruments for precise measurements and reliable data collection during audits and testing.</p>
+
+                        <div class="instruments-detailed-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+
+                            <div class="instrument-detail-card" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--secondary-color);">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                                    <div style="font-size: 2rem;">📊</div>
+                                    <h4 style="color: var(--primary-color); margin: 0;">Power Quality Analyzer</h4>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">3-phase power analyzer for harmonic analysis, power factor, voltage sags/swells, and EN 50160 compliance</p>
+                            </div>
+
+                            <div class="instrument-detail-card" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--dark-green);">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                                    <div style="font-size: 2rem;">💧</div>
+                                    <h4 style="color: var(--primary-color); margin: 0;">Ultrasonic Flow Meter</h4>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">Non-invasive flow measurement for water, chilled water, and HVAC systems with data logging</p>
+                            </div>
+
+                            <div class="instrument-detail-card" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-orange);">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                                    <div style="font-size: 2rem;">🌡️</div>
+                                    <h4 style="color: var(--primary-color); margin: 0;">Thermal Imaging Camera</h4>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">High-resolution infrared camera for electrical scanning, hot spot detection, and thermal analysis</p>
+                            </div>
+
+                            <div class="instrument-detail-card" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--secondary-color);">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                                    <div style="font-size: 2rem;">🔌</div>
+                                    <h4 style="color: var(--primary-color); margin: 0;">Digital Clamp Meter</h4>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">True RMS clamp meters for current, voltage, power measurements and electrical troubleshooting</p>
+                            </div>
+
+                            <div class="instrument-detail-card" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--dark-green);">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                                    <div style="font-size: 2rem;">🌍</div>
+                                    <h4 style="color: var(--primary-color); margin: 0;">Earth Resistance Tester</h4>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">Digital tester for 3-point/4-point ground resistance and soil resistivity measurements</p>
+                            </div>
+
+                            <div class="instrument-detail-card" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-orange);">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                                    <div style="font-size: 2rem;">⚡</div>
+                                    <h4 style="color: var(--primary-color); margin: 0;">RCD Tester</h4>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">Professional RCD/GFCI tester for trip time, sensitivity, and contact resistance verification</p>
+                            </div>
+
+                            <div class="instrument-detail-card" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--secondary-color);">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                                    <div style="font-size: 2rem;">🔋</div>
+                                    <h4 style="color: var(--primary-color); margin: 0;">Insulation Tester (Megger)</h4>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">High-voltage insulation resistance tester for cables, motors, transformers, and equipment</p>
+                            </div>
+
+                            <div class="instrument-detail-card" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--dark-green);">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                                    <div style="font-size: 2rem;">💨</div>
+                                    <h4 style="color: var(--primary-color); margin: 0;">Anemometer</h4>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">Precision air velocity, volumetric flow, and HVAC system balancing measurements</p>
+                            </div>
+
+                            <div class="instrument-detail-card" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-orange);">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                                    <div style="font-size: 2rem;">💡</div>
+                                    <h4 style="color: var(--primary-color); margin: 0;">Lux Meter</h4>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">Digital lux meter for illumination level measurements and lighting audit compliance</p>
+                            </div>
+
+                            <div class="instrument-detail-card" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--secondary-color);">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                                    <div style="font-size: 2rem;">📳</div>
+                                    <h4 style="color: var(--primary-color); margin: 0;">Vibration Analyzer</h4>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">Portable vibration meter for predictive maintenance, bearing analysis, and equipment monitoring</p>
+                            </div>
+
+                            <div class="instrument-detail-card" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--dark-green);">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                                    <div style="font-size: 2rem;">📏</div>
+                                    <h4 style="color: var(--primary-color); margin: 0;">Digital Manometer</h4>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">Digital manometer for static/dynamic pressure in HVAC ductwork and piping systems</p>
+                            </div>
+
+                            <div class="instrument-detail-card" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-orange);">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                                    <div style="font-size: 2rem;">📊</div>
+                                    <h4 style="color: var(--primary-color); margin: 0;">Data Logger</h4>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">Multi-channel data acquisition for long-term monitoring of temperature, humidity, energy</p>
+                            </div>
+
+                        </div>
+                    </div>
+                `
+            }
+        };
 
         function openServiceDetail(serviceKey) {
             const modal = document.getElementById('serviceModal');
@@ -2467,36 +2597,5 @@
             });
         });
     </script>
-
-    <!-- Instruments Modal -->
-    <div class="modal" id="instrumentsModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button class="modal-close" onclick="closeServiceDetail()">&times;</button>
-                <h2>Professional Testing Instruments</h2>
-                <p>State-of-the-art equipment for accurate measurements and comprehensive analysis</p>
-            </div>
-            <div class="modal-body">
-                <div class="detail-section">
-                    <h3>🔧 Testing & Measurement Equipment</h3>
-                    <ul class="detail-list">
-                        <li><strong>Power Quality Analyzer:</strong> Advanced 3-phase power analyzer for harmonic analysis, power factor, voltage sags/swells, and EN 50160 compliance testing</li>
-                        <li><strong>Ultrasonic Flow Meter:</strong> Non-invasive flow measurement for water, chilled water, and HVAC systems with data logging capabilities</li>
-                        <li><strong>Thermal Imaging Camera:</strong> High-resolution infrared camera for electrical panel scanning, hot spot detection, and building envelope analysis</li>
-                        <li><strong>Digital Clamp Meter:</strong> True RMS clamp meters for current, voltage, power measurements and troubleshooting electrical systems</li>
-                        <li><strong>Earth Resistance Tester:</strong> Digital earth tester for 3-point and 4-point ground resistance testing and soil resistivity measurements</li>
-                        <li><strong>RCD Tester:</strong> Professional RCD/GFCI tester for trip time, sensitivity, and contact resistance verification</li>
-                        <li><strong>Insulation Tester (Megger):</strong> High-voltage insulation resistance tester for cables, motors, transformers, and electrical equipment</li>
-                        <li><strong>Anemometer:</strong> Precision instruments for air velocity, volumetric flow, and HVAC system balancing measurements</li>
-                        <li><strong>Lux Meter:</strong> Digital lux meter for illumination level measurements and lighting audit compliance</li>
-                        <li><strong>Vibration Analyzer:</strong> Portable vibration meter for predictive maintenance, bearing analysis, and rotating equipment monitoring</li>
-                        <li><strong>Digital Manometer:</strong> Digital manometer for static/dynamic pressure, differential pressure in HVAC ductwork and piping systems</li>
-                        <li><strong>Data Logger:</strong> Multi-channel data acquisition system for long-term monitoring of temperature, humidity, energy consumption</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </body>
 </html>
